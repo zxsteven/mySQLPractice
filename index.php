@@ -2,18 +2,17 @@
 
 	$link = mysqli_connect('localhost', 'cl40-example-h7h', 'bkDFkY9^w', 'cl40-example-h7h');
 
-	if (mysql_connect_error()) {
-		die("Could not connect.");
-	}
+	if (mysqli_connect_error()) {
+	 	 die("Could not connect to database");
+	}	 	
 
-	$query = 'SELECT * FROM users';
-
+	//$query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES('John', 'john@example.com', 'test')";
+	 	
+	 	$query = "UPDATE `users` SET `email`= 'email@hptmail.com' WHERE `name`= 'Jeff'";
 	if ($result = mysqli_query($link, $query)) {
-		$row = mysql_fetch_array($result);
-		print_r($row);
+		 	 $row = mysqli_fetch_array($result);
+		 	 print_r($row); 
 	} else {
-		echo "Failed";
+		 echo "It failed";
 	}
-
-
 ?>
