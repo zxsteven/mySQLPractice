@@ -1,8 +1,5 @@
 <?php
 
-	//setcookie('id', '1234', time() + 60 * 60 *24);
+	echo md5(md5($row['id'])."password");
 
-	setcookie('id', '', time() - 3600);
-
-	echo $_COOKIE['id'];
 ?>
